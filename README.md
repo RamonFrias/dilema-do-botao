@@ -1,6 +1,6 @@
-### Bruno Carrion Pavaneli 190094
-### Rafaello Forti 190548
-### Ramon Frias 190703
+### Bruno Carrion Pavaneli | 190094 | CP110TIN1 e PA038TIN1
+### Rafaello Forti | 190548 | CP110TIN1 e PA038TIN1
+### Ramon Frias | 190703 | CP110TIN1 e PA038TIN1
 
 ## Dilemas do botão
 
