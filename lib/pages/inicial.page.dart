@@ -15,19 +15,53 @@ class _PaginaInicialState extends State<PaginaInicial> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(90),
+        padding: const EdgeInsets.all(40),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
+              const SizedBox(
+                height: 120,
+              ),
               // ignore: prefer_const_constructors
               Text(
                 'Dilemas do\n\t\t\t\t Botão',
                 style:
-                    const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                    const TextStyle(fontSize: 60, fontWeight: FontWeight.bold),
               ),
-              ElevatedButton(
+              const SizedBox(height: 70),
+              Center(
+                child: ElevatedButton(
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                      ),
+                      backgroundColor:
+                          MaterialStateProperty.resolveWith<Color?>((states) {
+                        if (states.contains(MaterialState.pressed)) {
+                          return Colors.red.shade300;
+                        }
+                        return Colors.red;
+                      }),
+                      fixedSize: MaterialStateProperty.all(const Size(150, 70)),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const JogarPage()));
+                    },
+                    child: const Text(
+                      'Jogar',
+                      style: TextStyle(fontSize: 20),
+                    )),
+              ),
+              const SizedBox(height: 20),
+              Center(
+                child: ElevatedButton(
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(
                       RoundedRectangleBorder(
@@ -41,38 +75,19 @@ class _PaginaInicialState extends State<PaginaInicial> {
                       }
                       return Colors.red;
                     }),
-                    fixedSize: MaterialStateProperty.all(const Size(120, 50)),
+                    fixedSize: MaterialStateProperty.all(const Size(150, 70)),
                   ),
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const JogarPage()));
+                            builder: (context) => const OpcoesPage()));
                   },
-                  child: const Text('Jogar')),
-              ElevatedButton(
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.0),
-                    ),
+                  child: const Text(
+                    "Opções",
+                    style: TextStyle(fontSize: 20),
                   ),
-                  backgroundColor:
-                      MaterialStateProperty.resolveWith<Color?>((states) {
-                    if (states.contains(MaterialState.pressed)) {
-                      return Colors.red.shade300;
-                    }
-                    return Colors.red;
-                  }),
-                  fixedSize: MaterialStateProperty.all(const Size(120, 50)),
                 ),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const OpcoesPage()));
-                },
-                child: const Text("Opções"),
               ),
             ],
           ),
