@@ -9,7 +9,9 @@ class OpcoesPage extends StatefulWidget {
 }
 
 class _OpcoesPageState extends State<OpcoesPage> {
-  bool checkValue = true;
+  bool checkValueSom = true;
+  bool checkValueMusica = true;
+  bool checkValueVibracao = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,53 +23,62 @@ class _OpcoesPageState extends State<OpcoesPage> {
           CheckboxListTile(
             title: const Text(
               "Som",
-              style: TextStyle(fontSize: 50),
+              style: TextStyle(fontSize: 45),
             ),
             activeColor: Colors.red,
-            value: checkValue,
+            value: checkValueSom,
             onChanged: (bool? value) {
               setState(() {
-                if (checkValue == true) {
-                  checkValue = false;
+                if (checkValueSom == true) {
+                  checkValueSom = false;
                 } else {
-                  checkValue = true;
+                  checkValueSom = true;
                 }
               });
             },
+          ),
+          const SizedBox(
+            height: 20,
           ),
           CheckboxListTile(
             title: const Text(
               "Música",
-              style: TextStyle(fontSize: 50),
+              style: TextStyle(fontSize: 45),
             ),
             activeColor: Colors.red,
-            value: checkValue,
+            value: checkValueMusica,
             onChanged: (bool? value) {
               setState(() {
-                if (checkValue == true) {
-                  checkValue = false;
+                if (checkValueMusica == true) {
+                  checkValueMusica = false;
                 } else {
-                  checkValue = true;
+                  checkValueMusica = true;
                 }
               });
             },
           ),
+          const SizedBox(
+            height: 20,
+          ),
           CheckboxListTile(
             title: const Text(
               "Vibração",
-              style: TextStyle(fontSize: 50),
+              style: TextStyle(fontSize: 45),
             ),
             activeColor: Colors.red,
-            value: checkValue,
+            value: checkValueVibracao,
             onChanged: (bool? value) {
               setState(() {
-                if (checkValue == true) {
-                  checkValue = false;
+                if (checkValueVibracao == true) {
+                  checkValueVibracao = false;
                 } else {
-                  checkValue = true;
+                  checkValueVibracao = true;
                 }
               });
             },
+          ),
+          const SizedBox(
+            height: 60,
           ),
           ElevatedButton(
             style: ButtonStyle(
