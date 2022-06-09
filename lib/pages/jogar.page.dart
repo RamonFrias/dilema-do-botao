@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 List<String> lista = [
@@ -43,29 +44,90 @@ class _JogarPageState extends State<JogarPage> {
                         child: Text(
                           textoAleatorio,
                           style: const TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                              fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                         alignment: Alignment.center,
                         decoration: const BoxDecoration(
                           border: Border(
                             top: BorderSide(
-                                width: 6,
+                                width: 5,
                                 color: Colors.red,
                                 style: BorderStyle.solid), //BorderSide
                             bottom: BorderSide(
-                                width: 6,
+                                width: 5,
                                 color: Colors.red,
                                 style: BorderStyle.solid), //BorderSide
                             left: BorderSide(
-                                width: 6,
+                                width: 5,
                                 color: Colors.red,
                                 style: BorderStyle.solid), //Borderside
                             right: BorderSide(
-                                width: 6,
+                                width: 5,
                                 color: Colors.red,
                                 style: BorderStyle.solid), //BorderSide
                           ),
                         ),
+                      )),
+                ),
+                const SizedBox(
+                  height: 80,
+                ),
+                Center(
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.all(
+                            const CircleBorder(side: BorderSide.none)),
+                        backgroundColor:
+                            MaterialStateProperty.resolveWith<Color?>((states) {
+                          if (states.contains(MaterialState.pressed)) {
+                            return Colors.red.shade300;
+                          }
+                          return Colors.red;
+                        }),
+                        fixedSize:
+                            MaterialStateProperty.all(const Size(200, 150)),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const JogarPage()));
+                      },
+                      child: const Text(
+                        '',
+                        style: TextStyle(fontSize: 20),
+                      )),
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
+                Center(
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
+                        ),
+                        backgroundColor:
+                            MaterialStateProperty.resolveWith<Color?>((states) {
+                          if (states.contains(MaterialState.pressed)) {
+                            return Colors.red.shade300;
+                          }
+                          return Colors.red;
+                        }),
+                        fixedSize:
+                            MaterialStateProperty.all(const Size(150, 70)),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const JogarPage()));
+                      },
+                      child: const Text(
+                        'Recusar',
+                        style: TextStyle(fontSize: 20),
                       )),
                 ),
               ],
