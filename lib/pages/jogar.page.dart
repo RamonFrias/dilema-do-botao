@@ -1,6 +1,5 @@
 import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
+import 'package:dilemadobotao/pages/porcentagem.page.dart';
 import 'package:flutter/material.dart';
 
 List<String> lista = [
@@ -48,6 +47,11 @@ class _JogarPageState extends State<JogarPage> {
                         ),
                         alignment: Alignment.center,
                         decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              topRight: Radius.circular(20),
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20)),
                           border: Border(
                             top: BorderSide(
                                 width: 5,
@@ -91,7 +95,7 @@ class _JogarPageState extends State<JogarPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const JogarPage()));
+                                builder: (context) => const PorcentagemPage()));
                       },
                       child: const Text(
                         '',
@@ -123,7 +127,7 @@ class _JogarPageState extends State<JogarPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const JogarPage()));
+                                builder: (context) => const PorcentagemPage()));
                       },
                       child: const Text(
                         'Recusar',
