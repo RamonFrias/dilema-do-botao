@@ -2,15 +2,30 @@ import 'package:dilemadobotao/pages/jogar.page.dart';
 import 'package:flutter/material.dart';
 
 class PorcentagemPage extends StatefulWidget {
-  const PorcentagemPage({Key? key}) : super(key: key);
+  int valorBotao;
+  PorcentagemPage(this.valorBotao, {Key? key}) : super(key: key);
 
   @override
-  State<PorcentagemPage> createState() => _PorcentagemPage();
+  State<PorcentagemPage> createState() => _PorcentagemPage(valorBotao);
 }
 
+List<int> apertaram = [0];
+List<int> naoApertaram = [0];
+
 class _PorcentagemPage extends State<PorcentagemPage> {
+  int valorBotao;
+  _PorcentagemPage(this.valorBotao);
+
   @override
   Widget build(BuildContext context) {
+    if (valorBotao == 0) {
+      apertaram.add(apertaram.last + 1);
+    } else {
+      naoApertaram.add(naoApertaram.last + 1);
+    }
+
+    double porcentagem = (100 / (apertaram.last + naoApertaram.last));
+
     return Scaffold(
         backgroundColor: Colors.white,
         body: Padding(
@@ -27,9 +42,9 @@ class _PorcentagemPage extends State<PorcentagemPage> {
                   child: SizedBox(
                       height: 120,
                       child: Container(
-                        child: const Text(
-                          "33% das pessoas apertaram o botão.",
-                          style: TextStyle(
+                        child: Text(
+                          "${(porcentagem * apertaram.last).toStringAsFixed(0)}% das pessoas apertaram o botão.",
+                          style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: Colors.white),
@@ -70,9 +85,9 @@ class _PorcentagemPage extends State<PorcentagemPage> {
                   child: SizedBox(
                       height: 120,
                       child: Container(
-                        child: const Text(
-                          "33% das pessoas não apertaram o botão.",
-                          style: TextStyle(
+                        child: Text(
+                          "${(porcentagem * naoApertaram.last).toStringAsFixed(0)}% das pessoas não apertaram o botão.",
+                          style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: Colors.white),

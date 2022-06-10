@@ -7,7 +7,7 @@ List<String> lista = [
   "Voce pode ficar invisivel, mas so quando ninguem estiver olhando.",
   "Voce pode viajar no tempo, mas so uma vez.",
   "Seu chuveiro vai estar sempre na temperatura perfeita, mas voce precisa entrar numa banheira de gelo uma vez por mes.",
-  ""
+  "Voce pode morar na casa dos seus sonhos, mas a privada vai entupir sempre que for usada."
 ];
 
 final _random = Random();
@@ -95,7 +95,7 @@ class _JogarPageState extends State<JogarPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const PorcentagemPage()));
+                                builder: (context) => PorcentagemPage(0)));
                       },
                       child: const Text(
                         '',
@@ -127,7 +127,7 @@ class _JogarPageState extends State<JogarPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const PorcentagemPage()));
+                                builder: (context) => PorcentagemPage(1)));
                       },
                       child: const Text(
                         'Recusar',
