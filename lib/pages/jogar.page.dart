@@ -7,7 +7,10 @@ List<String> lista = [
   "Voce pode ficar invisivel, mas so quando ninguem estiver olhando.",
   "Voce pode viajar no tempo, mas so uma vez.",
   "Seu chuveiro vai estar sempre na temperatura perfeita, mas voce precisa entrar numa banheira de gelo uma vez por mes.",
-  "Voce pode morar na casa dos seus sonhos, mas a privada vai entupir sempre que for usada."
+  "Voce pode morar na casa dos seus sonhos, mas a privada vai entupir sempre que for usada.",
+  "Você recebe 140 mil por mês, mas terá que trabalhar 20 horas por dia.",
+  "Tudo será gratuito apenas para você, exceto para produtos eletrônicos, que serão mais caros.",
+  "Você pode se tornar imortal, mas você só pode comer wasabi pelo resto de sua vida."
 ];
 
 final _random = Random();

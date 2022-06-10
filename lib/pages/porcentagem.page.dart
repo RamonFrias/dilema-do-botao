@@ -1,11 +1,13 @@
 import 'package:dilemadobotao/pages/jogar.page.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class PorcentagemPage extends StatefulWidget {
   int valorBotao;
   PorcentagemPage(this.valorBotao, {Key? key}) : super(key: key);
 
   @override
+  // ignore: no_logic_in_create_state
   State<PorcentagemPage> createState() => _PorcentagemPage(valorBotao);
 }
 
